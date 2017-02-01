@@ -16,7 +16,7 @@ var session = require('express-session');
 // it could be 'localhost:27017' or try '127.0.0.1' so problems may occurs
 //
 var mongoose = require('mongoose');
-mongoose.connect('mongodb://localhost/chrip-test');
+mongoose.connect(process.env.MONGOLAB_URI || 'mongodb://localhost/chrip-test');
 require('./models/models');
 
 //
